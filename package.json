@@ -1,49 +1,104 @@
 {
   "name": "trending-days-of-code",
+  "description": "Mobile-first web application to track publicly trending 'days of code' challenges",
+  "author": "Jacob Ward <jacob@riino.co.uk>",
   "version": "0.0.1",
   "license": "MIT",
+  "repository": "https://github.com/jacobwarduk/trending-days-of-code.git"
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint": "xo --fix",
+    "build": "npm run lint && npm run test && webpack",
+    "watch": "webpack --watch",
+    "test": "jest",
+    "dev": "webpack-dev-server"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^4.0.0",
-    "@angular/common": "^4.0.0",
-    "@angular/compiler": "^4.0.0",
-    "@angular/core": "^4.0.0",
-    "@angular/forms": "^4.0.0",
-    "@angular/http": "^4.0.0",
-    "@angular/platform-browser": "^4.0.0",
-    "@angular/platform-browser-dynamic": "^4.0.0",
-    "@angular/router": "^4.0.0",
-    "core-js": "^2.4.1",
-    "rxjs": "^5.4.1",
-    "zone.js": "^0.8.14"
+    "axios": "0.16.1",
+    "babel-plugin-dynamic-import-webpack": "1.0.1",
+    "babel-plugin-transform-decorators-legacy": "1.3.4",
+    "babel-register": "6.24.1",
+    "compression": "1.6.2",
+    "cors": "2.8.3",
+    "express": "4.15.3",
+    "lodash": "4.17.4",
+    "preact": "8.1.0",
+    "preact-compat": "3.16.0",
+    "prop-types": "15.5.10",
+    "react": "15.5.4",
+    "react-addons-perf": "15.4.2",
+    "react-dom": "15.5.4",
+    "react-redux": "5.0.5",
+    "react-router-dom": "4.1.1",
+    "redux": "3.6.0",
+    "redux-thunk": "2.2.0",
+    "styled-components": "2.0.0",
+    "webpack": "2.6.1",
+    "webpack-dev-middleware": "1.10.2",
+    "webpack-hot-middleware": "2.18.0"
   },
   "devDependencies": {
-    "@angular/cli": "1.2.3",
-    "@angular/compiler-cli": "^4.0.0",
-    "@angular/language-service": "^4.0.0",
-    "@types/jasmine": "~2.5.53",
-    "@types/jasminewd2": "~2.0.2",
-    "@types/node": "~6.0.60",
-    "codelyzer": "~3.0.1",
-    "jasmine-core": "~2.6.2",
-    "jasmine-spec-reporter": "~4.1.0",
-    "karma": "~1.7.0",
-    "karma-chrome-launcher": "~2.1.1",
-    "karma-cli": "~1.0.1",
-    "karma-coverage-istanbul-reporter": "^1.2.1",
-    "karma-jasmine": "~1.1.0",
-    "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "~5.1.2",
-    "ts-node": "~3.0.4",
-    "tslint": "~5.3.2",
-    "typescript": "~2.3.3"
+    "babel-core": "6.24.1",
+    "babel-eslint": "7.2.3",
+    "babel-loader": "7.0.0",
+    "babel-plugin-dynamic-import-node": "1.0.2",
+    "babel-plugin-syntax-dynamic-import": "6.18.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.24.1",
+    "babel-preset-env": "1.5.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "enzyme": "^2.9.1",
+    "eslint": "3.19.0",
+    "eslint-config-xo": "^0.18.2",
+    "eslint-config-xo-react": "^0.12.0",
+    "eslint-loader": "1.7.1",
+    "eslint-plugin-import": "2.3.0",
+    "eslint-plugin-jsx-a11y": "5.0.3",
+    "eslint-plugin-react": "7.0.1",
+    "jest": "^20.0.4",
+    "jest-serializer-enzyme": "^1.0.0",
+    "moxios": "0.4.0",
+    "nodemon": "1.11.0",
+    "prop-types": "^15.5.10",
+    "react-hot-loader": "3.0.0-beta.6",
+    "react-test-renderer": "15.5.4",
+    "webpack-dev-server": "2.4.5",
+    "xo": "^0.18.2",
+    "xo-loader": "^0.8.0"
+  },
+  "xo": {
+    "extends": "xo-react",
+    "rules": {
+      "max-nested-callbacks": 0,
+      "unicorn/filename-case": 0,
+      "react/jsx-no-bind": 0,
+      "react/jsx-handler-names": 0,
+      "react/jsx-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "import/no-unresolved": 0,
+      "react/jsx-tag-spacing": [
+        1,
+        {
+          "beforeSelfClosing": "always",
+          "afterOpening": "never"
+        }
+      ],
+      "react/jsx-key": 0
+    },
+    "globals": [
+      "document",
+      "describe",
+      "it",
+      "expect",
+      "beforeEach",
+      "afterEach"
+    ]
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "jest-serializer-enzyme"
+    ]
   }
 }
