@@ -1,10 +1,26 @@
 {
   "name": "trending-days-of-code",
   "description": "Mobile-first web application to track publicly trending 'days of code' challenges",
-  "author": "Jacob Ward <jacob@riino.co.uk>",
+  "author": {
+    "name": "Jacob Ward <jacob@riino.co.uk>",
+    "url": "http://github.com/jacobwarduk"
+  },
+  "homepage": "https://github.com/jacobwarduk/trending-days-of-code",
   "version": "0.0.1",
-  "license": "MIT",
-  "repository": "https://github.com/jacobwarduk/trending-days-of-code.git"
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jacobwarduk/trending-days-of-code/blob/master/LICENSE.md"
+    }
+  ],
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/jacobwarduk/trending-days-of-code/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jacobwarduk/trending-days-of-code.git"
+  },
   "scripts": {
     "lint": "xo --fix",
     "build": "npm run lint && npm run test && webpack",
