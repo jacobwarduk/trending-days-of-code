@@ -5,7 +5,7 @@ import FourOhFour from '../../js/404';
 describe('FourOhFour', () => {
 	'use strict';
 	describe('when rendered', () => {
-		let component = shallow(<FourOhFour />);
+		const component = shallow(<FourOhFour />);
 
 		it('should render correctly', () => {
 			expect(component).toMatchSnapshot();

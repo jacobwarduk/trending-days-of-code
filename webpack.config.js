@@ -50,3 +50,7 @@ module.exports = {
 		]
 	}
 };
+
+/*
+	NEED TO ADD manifest.json
+ */
