@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import FourOhFour from './404';
-import Landing from './Trending';
+import Trending from './Trending';
 
 class App extends React.Component {
 	render() {
