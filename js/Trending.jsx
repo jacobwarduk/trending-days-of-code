@@ -1,5 +1,4 @@
 import React from 'react';
-import {Button} from 'react-bootstrap';
 import axios from 'axios';
 import {apiUrl, baseRepo} from '../consts';
 
@@ -19,7 +18,9 @@ class Trending extends React.Component {
 	getForkedRepos(page) {
 		axios.get(`${apiUrl}/repos/${baseRepo}/forks?page=${page}`)
 			.then(res => {
-				console.log(res);
+				const repos = res.data.map(repo => repo);
+				this.setState({repos});
+				console.log(this.state.repos);
 			})
 			.catch(err => {
 				console.error(err);
@@ -30,7 +31,9 @@ class Trending extends React.Component {
 		return (
 			<div>
 				<h1>Its alive...!</h1>
-				<Button bsStyle="success" bsSize="small">Test Button</Button>
+				<ul>
+					{this.state.repos.map(repo => <li>{repo.url}</li>)}
+				</ul>
 			</div>
 		);
 	}
