@@ -31,8 +31,9 @@ class Trending extends React.Component {
 		return (
 			<div>
 				<h1>Its alive...!</h1>
+
 				<ul>
-					{this.state.repos.map(repo => <li>{repo.url}</li>)}
+					{this.state.repos.map(repo => <li>{repo.owner.login} {repo.url}</li>)}
 				</ul>
 			</div>
 		);
