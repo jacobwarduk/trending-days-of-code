@@ -37,6 +37,7 @@
     "compression": "1.6.2",
     "cors": "2.8.3",
     "lodash": "4.17.4",
+    "moment": "^2.18.1",
     "preact": "8.1.0",
     "preact-compat": "3.16.0",
     "prop-types": "15.5.10",
@@ -84,6 +85,7 @@
   "xo": {
     "extends": "xo-react",
     "rules": {
+      "camelcase": 0,
       "max-nested-callbacks": 0,
       "unicorn/filename-case": 0,
       "react/jsx-no-bind": 0,

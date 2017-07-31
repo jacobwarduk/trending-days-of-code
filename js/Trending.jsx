@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {apiUrl, baseRepo} from '../consts';
+import Update from './Update';
 
 class Trending extends React.Component {
 	constructor(props) {
@@ -9,18 +10,20 @@ class Trending extends React.Component {
 		this.state = {
 			repos: []
 		};
+
+		this.page = 1;
 	}
 
 	componentDidMount() {
-		this.getForkedRepos(1);
+		this.getForkedRepos(this.page);
 	}
 
 	getForkedRepos(page) {
 		axios.get(`${apiUrl}/repos/${baseRepo}/forks?page=${page}`)
 			.then(res => {
-				const repos = res.data.map(repo => repo);
+				const repos = res.data;
 				this.setState({repos});
-				console.log(this.state.repos);
+				this.page++;
 			})
 			.catch(err => {
 				console.error(err);
@@ -29,13 +32,9 @@ class Trending extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<h1>Its alive...!</h1>
-
-				<ul>
-					{this.state.repos.map(repo => <li>{repo.owner.login} {repo.url}</li>)}
-				</ul>
-			</div>
+			<main>
+				{this.state.repos.map(props => <div><Update key={ props.owner.id } { ...props } /></div>)}
+			</main>
 		);
 	}
 }
