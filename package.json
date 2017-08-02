@@ -1,6 +1,6 @@
 {
   "name": "trending-days-of-code",
-  "description": "Mobile-first web application to track publicly trending 'days of code' challenges",
+  "description": "Mobile-first web application to publicly track trending 'days of code' challenges",
   "author": {
     "name": "Jacob Ward <jacob@riino.co.uk>",
     "url": "http://github.com/jacobwarduk"
