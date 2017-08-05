@@ -5,14 +5,21 @@ class Log extends React.Component {
 	render() {
 		return (
 			<div>
-				{ this.props.match.params.id }
+				<pre>
+					<code>
+						window.atob()
+						{ JSON.stringify(this.props.match) }
+						{ JSON.stringify(this.props.history) }
+					</code>
+				</pre>
 			</div>
 		);
 	}
 }
 
 Log.propTypes = {
-	match: shape().isRequired
+	match: shape().isRequired,
+	history: shape().isRequired
 };
 
 export default Log;

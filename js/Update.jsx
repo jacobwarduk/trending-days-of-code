@@ -23,7 +23,7 @@ class Update extends React.Component {
 				<div className="card-block">
 					<div className="media">
 						<div className="media-left">
-							<a href="#">
+							<a href={ this.props.owner.html_url }>
 								<Avatar src={ this.props.owner.avatar_url } alt={ this.props.owner.login } />
 							</a>
 						</div>
