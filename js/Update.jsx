@@ -41,7 +41,7 @@ class Update extends React.Component {
 				</div>
 				<div className="card-footer">
 					<div className="text-right">
-						<Link to={ `/log/${this.props.owner.id}` }>
+						<Link to={ `/log/${this.props.owner.login}` }>
 							<button className="btn btn-primary">
 								<div className="fa fa-calendar" />
 								&nbsp; View Log
