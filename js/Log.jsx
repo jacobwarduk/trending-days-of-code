@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import {shape} from 'prop-types';
 import base64 from 'base-64';
+import Remarkable from 'remarkable';
+import reactHtmlParser from 'react-html-parser';
 import {apiUrl} from '../consts';
 
 class Log extends React.Component {
@@ -29,14 +31,13 @@ class Log extends React.Component {
 	}
 
 	render() {
+		const md = new Remarkable();
+		const htmlString = md.render(this.state.log);
+		const htmlContent = reactHtmlParser(htmlString);
+
 		return (
 			<div>
-				<pre>
-					<code>
-						{ console.log(this.state.log) }
-						{ this.state.log }
-					</code>
-				</pre>
+				{htmlContent}
 			</div>
 		);
 	}
